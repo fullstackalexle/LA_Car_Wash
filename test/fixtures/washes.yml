@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle: one
+  sales_price: 9.99
+  discount: false
+  discount_percentage: 9.99
+  discount_value: 9.99
+
+two:
+  vehicle: two
+  sales_price: 9.99
+  discount: false
+  discount_percentage: 9.99
+  discount_value: 9.99

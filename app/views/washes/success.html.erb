@@ -1,0 +1,13 @@
+<div class="checkout-details">
+	<p class="wash-detail">Wash ID: <span class="wash-detail"><%= @wash.id %></span></p>
+	<p class="wash-detail">Vehicle ID: <span class="wash-detail"><%= @wash.vehicle.id %></span></p>
+	<p class="wash-detail">Type of vehicle: <span class="wash-detail"><%= @wash.vehicle.type_of_vehicle %></span></p>
+	<p class="wash-detail">Sales Price: <span class="wash-detail">$<%= number_with_precision(@wash.sales_price, :precision => 2) %></span></p>
+	<% if @wash.vehicle.type_of_vehicle == 1 %>
+		<p class="wash-detail">Mud in Truck Bed Fee: <span class="wash-detail">$<%= number_with_precision(@mud_in_bed_fee, :precision => 2) %></span></p>
+	<% end %>
+	<p class="wash-detail">Discount: <span class="wash-detail"><%= @wash.discount %></span></p>
+	<p class="wash-detail">Discount Percentage: <span class="wash-detail"><%= @wash.discount_percentage * 100 %>%</span></p>
+	<p class="wash-detail">Discount Amount: <span class="wash-detail">$<%= number_with_precision(@wash.discount_value, :precision => 2) %></span></p>
+	<p class="wash-detail">Total Price: <span class="wash-detail">$<%= number_with_precision(@wash.total_price, :precision => 2) %></span></p>
+</div>
