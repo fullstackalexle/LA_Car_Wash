@@ -1,0 +1,19 @@
+<img src="<%= @vehicle.license_plate_image.url %>" alt=<%= @vehicle.license_plate_image %>>
+
+<%= form_for :vehicle, :url => "/wash/beginWashing/#{@vehicle.type_of_vehicle.downcase}" do |f| %>
+  License Plate: <%= f.text_field :license_plate %><br />
+  <% if Vehicle.type_of_vehicles[params[:type_of_vehicle]] === 1 %>
+  	<input type="checkbox" id="truck_bed_status" name="truck_bed_status"
+         required>
+    <label for="truck_bed_status">Is the truck bed up on your truck?</label>
+
+    <br>
+
+    <input type="checkbox" id="truck_bed_mud" name="truck_bed_mud">
+    <label for="truck_bed_mud">Is their mud in your truck bed?</label>
+  <% end %>
+
+  <br>
+
+  <%= f.submit "Wash #{@vehicle.type_of_vehicle.capitalize}" %>
+<% end %>

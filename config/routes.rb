@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'wash/:type_of_vehicle' => 'washes#new'
 
+  post 'upload/licensePlate' => 'vehicles#upload_license_plate'
+
   post 'wash/beginWashing/:type_of_vehicle' => 'washes#wash_vehicle'
 
   get 'wash/error/report/stolenVehicle' => 'washes#report_stolen_vehicle', as: 'stolen_vehicle'
